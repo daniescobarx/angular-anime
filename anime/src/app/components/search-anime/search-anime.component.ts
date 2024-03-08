@@ -6,14 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './search-anime.component.css'
 })
 export class SearchAnimeComponent implements OnInit {
-      
+    searchTerm: string = '';
+
+
       constructor(){ }
 
       ngOnInit(): void {
 
       }
 
-      search(searchTerm: String){
-        console.log(searchTerm)
+      search(){
+        console.log(this.searchTerm)
       }
 }
