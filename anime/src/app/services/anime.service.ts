@@ -22,6 +22,9 @@ export class AnimeService {
     this.anime_response$.next(anime);
   }
 
+  getResultAnime(): Observable<any> {
+   return this.anime_response$.asObservable()
+  }
 
 
 
