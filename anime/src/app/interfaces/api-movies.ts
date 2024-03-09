@@ -1,7 +1,16 @@
 
 export interface APIAnime {
   pagination: Pagination;
-  data:       Anime[];
+  data: Anime[];
+}
+
+
+export interface MyAnime {
+  id: number,
+  title: string,
+  imagen: string,
+  total_episodes: number | null,
+  watched_episodes: number
 }
 
 export interface Anime {

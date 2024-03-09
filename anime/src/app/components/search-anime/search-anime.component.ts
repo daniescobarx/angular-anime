@@ -21,6 +21,5 @@ export class SearchAnimeComponent implements OnInit {
           console.log(result);
           this.AnimeService.addResultAnime(result.data);
         })
-        //console.log(this.searchTerm)
       }
 }

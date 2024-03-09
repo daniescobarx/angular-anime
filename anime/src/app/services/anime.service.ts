@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
+import { APIAnime, Anime } from '../interfaces/api-movies';
 
 
 @Injectable({
@@ -13,16 +14,17 @@ export class AnimeService {
 
   constructor(private http: HttpClient) { }
 
-  getAnimes(searchTerm: string): Observable<any> {
-  return  this.http.get(`${this.API_URL}${searchTerm}`);
+  getAnimes(searchTerm: string): Observable<APIAnime> {
+    return this.http.get<APIAnime>(`${this.API_URL}${searchTerm}`);
   }
 
   //metodo
-  addResultAnime(anime: any){
+  addResultAnime(anime: Anime[]) {
     this.anime_response$.next(anime);
   }
 
-  getResultAnime(): Observable<any> {
+
+  getResultAnime(): Observable<Anime[]> {
    return this.anime_response$.asObservable()
   }
 
