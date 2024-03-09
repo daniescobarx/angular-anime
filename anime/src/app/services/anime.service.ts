@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 
 @Injectable({
@@ -9,10 +9,20 @@ import { Observable } from 'rxjs';
 export class AnimeService {
     private API_URL = 'https://api.jikan.moe/v4/anime?q=';
 
+    private anime_response$ = new Subject<any>();
+
   constructor(private http: HttpClient) { }
 
   getAnimes(searchTerm: string): Observable<any> {
   return  this.http.get(`${this.API_URL}${searchTerm}`);
   }
+
+  //metodo
+  addResultAnime(anime: any){
+    this.anime_response$.next(anime);
+  }
+
+
+
 
 }
