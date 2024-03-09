@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AnimeService } from '../../services/anime.service';
 
 @Component({
   selector: 'app-search-anime',
@@ -9,13 +10,14 @@ export class SearchAnimeComponent implements OnInit {
     searchTerm: string = '';
 
 
-      constructor(){ }
+      constructor(private AnimeService: AnimeService){ }
 
       ngOnInit(): void {
 
       }
 
       search(){
-        console.log(this.searchTerm)
+        this.AnimeService.getAnimes(this.searchTerm)
+        //console.log(this.searchTerm)
       }
 }
