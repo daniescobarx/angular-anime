@@ -1,5 +1,5 @@
-<div class="results">
-  <div class="result">
+<div *ngIf="anime_results.length > 0" class="results">
+  <div *ngFor="let anime of anime_results" class="result">
       <img src="https://cdn.myanimelist.net/images/anime/1770/97704.jpg" alt="">
       <div class="details">
         <h3>One Piece Movie 01</h3>
