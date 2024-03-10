@@ -36,7 +36,7 @@ export class ResultAnimeComponent implements OnInit {
       const addAnime: any = {
         id: anime.mal_id,
         title: anime.title,
-        image: anime.images,
+        image: anime.images['jpg'].image_url,
         sinopse: anime.synopsis,
         eps: anime.episodes,
         duration: anime.duration
