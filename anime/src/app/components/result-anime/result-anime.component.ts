@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AnimeService } from '../../services/anime.service';
-import { Anime } from '../../interfaces/api-movies'; 
+import { Anime } from '../../interfaces/api-movies';
 
 
 @Component({
@@ -22,4 +22,10 @@ export class ResultAnimeComponent implements OnInit {
         this.anime_results = result
       })
   }
+
+
+  addAnime(anime: Anime){
+      console.log("add blz"+ anime);
+  }
+
 }
