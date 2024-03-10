@@ -2,6 +2,10 @@
   <div *ngFor="let anime of animes_selected" class="anime">
     <img [src]="anime.imagem" alt="img">
     <h3>{{anime.title}}</h3>
+    <div class="flex-1"></div>
+    <span class="episode">{{anime.watched_episodes}} / {{anime.eps}}</span>
+    <button type="button" (click)="aumentarEp(anime)" class="button">+</button>
+    <button type="button" (click)="diminuirEp(anime)" class="button">-</button>
 
   </div>
 </div>

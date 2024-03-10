@@ -17,4 +17,12 @@ export class SelectedAnimeComponent implements OnInit {
           this.animes_selected.push(anime)
         } )
     }
+
+    aumentarEp(anime: MySelect){
+      anime.watched_episodes++;
+    }
+
+    diminuirEp(anime: MySelect){
+      anime.watched_episodes--;
+    }
 }
