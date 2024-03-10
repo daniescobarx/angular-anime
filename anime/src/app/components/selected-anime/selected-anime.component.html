@@ -1,5 +1,6 @@
 <div *ngIf="animes_selected.length > 0" class="myanime">
   <div *ngFor="let anime of animes_selected" class="anime">
     <img [src]="anime.imagem" alt="img">
+    <h3>{{anime}}</h3>
   </div>
 </div>

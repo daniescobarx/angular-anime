@@ -20,6 +20,8 @@ export class SearchAnimeComponent implements OnInit {
         this.AnimeService.getAnimes(this.searchTerm).subscribe(result => {
           console.log(result);
           this.AnimeService.addResultAnime(result.data);
+          //limpa
+          this.searchTerm = '';
         })
       }
 }
