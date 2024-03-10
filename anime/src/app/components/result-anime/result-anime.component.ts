@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AnimeService } from '../../services/anime.service';
 import { Anime } from '../../interfaces/api-movies';
 import { Subscription } from 'rxjs';
+import { Title } from '@angular/platform-browser';
 
 
 @Component({
@@ -32,6 +33,14 @@ export class ResultAnimeComponent implements OnInit {
 
   addAnime(anime: Anime){
       console.log("add blz", anime);
+      const addAnime: any = {
+        id: anime.mal_id,
+        title: anime.title,
+        image: anime.images,
+        sinopse: anime.synopsis,
+        eps: anime.episodes,
+        duration: anime.duration
+      }
   }
 
 }
