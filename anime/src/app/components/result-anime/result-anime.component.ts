@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AnimeService } from '../../services/anime.service';
-import { Anime } from '../../interfaces/api-movies';
+import { Anime, MySelect } from '../../interfaces/api-movies';
 import { Subscription } from 'rxjs';
 import { Title } from '@angular/platform-browser';
 
@@ -33,13 +33,11 @@ export class ResultAnimeComponent implements OnInit {
 
   addAnime(anime: Anime){
       console.log("add blz", anime);
-      const addAnime: any = {
+      const addAnime: MySelect = {
         id: anime.mal_id,
         title: anime.title,
-        image: anime.images['jpg'].image_url,
-        sinopse: anime.synopsis,
+        imagem: anime.images['jpg'].image_url,
         eps: anime.episodes,
-        duration: anime.duration,
         watched_episodes: 0
       }
   }

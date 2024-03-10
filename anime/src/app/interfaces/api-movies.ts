@@ -4,6 +4,14 @@ export interface APIAnime {
   data: Anime[];
 }
 
+export interface MySelect {
+  id: number,
+  title: string,
+  imagem: string,
+  eps: number | null,
+  watched_episodes: number,
+}
+
 
 export interface MyAnime {
   id: number,
