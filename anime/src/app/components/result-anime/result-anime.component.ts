@@ -39,7 +39,8 @@ export class ResultAnimeComponent implements OnInit {
         image: anime.images['jpg'].image_url,
         sinopse: anime.synopsis,
         eps: anime.episodes,
-        duration: anime.duration
+        duration: anime.duration,
+        watched_episodes: 0
       }
   }
 
