@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
-import { APIAnime, Anime } from '../interfaces/api-movies';
+import { APIAnime, Anime, MySelect } from '../interfaces/api-movies';
 
 
 @Injectable({
@@ -10,7 +10,8 @@ import { APIAnime, Anime } from '../interfaces/api-movies';
 export class AnimeService {
     private API_URL = 'https://api.jikan.moe/v4/anime?q=';
 
-    private anime_response$ = new Subject<any>();
+    private anime_response$ = new Subject<Anime[]>();
+    private anime_selected$ = new Subject<MySelect>();
 
   constructor(private http: HttpClient) { }
 
@@ -28,6 +29,12 @@ export class AnimeService {
    return this.anime_response$.asObservable()
   }
 
+  AnimeSelected(anime: MySelect){
+    this.anime_selected$.next(anime);
+  }
 
+  getAnimeSelected(): Observable<MySelect>{
+    return this.anime_selected$.asObservable();
+  }
 
 }
