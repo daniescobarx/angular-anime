@@ -42,6 +42,7 @@ export class ResultAnimeComponent implements OnInit {
       }
 
       this.AnimeService.AnimeSelected(addAnime);
+      this.anime_results = [];
   }
 
 }
