@@ -25,6 +25,10 @@ export class ResultAnimeComponent implements OnInit {
       })
   }
 
+  ngOnDestroy(): void {
+    this.animeSubscription.unsubscribe();
+  }
+
 
   addAnime(anime: Anime){
       console.log("add blz", anime);
