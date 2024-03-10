@@ -4,8 +4,8 @@
     <h3>{{anime.title}}</h3>
     <div class="flex-1"></div>
     <span class="episode">{{anime.watched_episodes}} / {{anime.eps}}</span>
-    <button type="button" (click)="aumentarEp(anime)" class="button">+</button>
-    <button type="button" (click)="diminuirEp(anime)" class="button">-</button>
+    <button type="button" *ngIf="anime.watched_episodes !== anime.eps" (click)="aumentarEp(anime)" class="button">+</button>
+    <button type="button" *ngIf="anime.watched_episodes > 0"  (click)="diminuirEp(anime)" class="button">-</button>
 
   </div>
 </div>
