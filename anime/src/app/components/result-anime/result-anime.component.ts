@@ -40,6 +40,8 @@ export class ResultAnimeComponent implements OnInit {
         eps: anime.episodes,
         watched_episodes: 0
       }
+
+      this.AnimeService.AnimeSelected(addAnime);
   }
 
 }
