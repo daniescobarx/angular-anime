@@ -12,9 +12,14 @@ export class SelectedAnimeComponent implements OnInit {
     constructor(private AnimeService : AnimeService){ }
 
     ngOnInit(): void {
+      this.animes_selected = JSON.parse(localStorage.getItem('my_anime') as any) || [];
+
         this.AnimeService.getAnimeSelected().subscribe(anime => {
           console.log(anime);
           this.animes_selected.push(anime)
+          localStorage.setItem('my_anime', JSON.stringify(this.animes_selected));
+          console.log('Dados salvos no localStorage:', localStorage.getItem('my_select'));
+
         } )
     }
 
