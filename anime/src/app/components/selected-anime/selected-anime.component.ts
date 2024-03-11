@@ -19,15 +19,16 @@ export class SelectedAnimeComponent implements OnInit {
           this.animes_selected.push(anime)
           localStorage.setItem('my_anime', JSON.stringify(this.animes_selected));
           console.log('Dados salvos no localStorage:', localStorage.getItem('my_select'));
-
         } )
     }
 
     aumentarEp(anime: MySelect){
       anime.watched_episodes++;
+      localStorage.setItem('my_anime', JSON.stringify(this.animes_selected));
     }
 
     diminuirEp(anime: MySelect){
       anime.watched_episodes--;
+      localStorage.setItem('my_anime', JSON.stringify(this.animes_selected));
     }
 }
